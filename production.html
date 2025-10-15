@@ -197,24 +197,18 @@
     </style>
 </head>
 <body>
-	<nav>
-    <a href="index.html">Accueil</a>
-    	<a href="controle.html">Contrôle</a>
-    	<a href="production.html">Production</a>
-	</nav>
     <div class="container">
         <h1>Etapes de production</h1>
 
         <div class="button-container">
-			<a href="index.html">
+			<a href="index.html" class="btn btn-accueil" style="text-decoration: none; display: inline-block;">
 				ACCUEIL
 			</a>
-			<button class="btn btn-lien" onclick="showlien ()">LIEN</button>
+			<button class="btn btn-lien" onclick="showlien()">LIEN</button>
 			<button class="btn btn-structure" onclick="showStructure()">STRUCTURE</button>
-            <button class="btn btn-habillage" onclick="showHabillage()">HABILLAGE</button>
-            <button class="btn btn-PM" onclick="showPM()">PM</button>
-
-        </div>
+			<button class="btn btn-habillage" onclick="showHabillage()">HABILLAGE</button>
+			<button class="btn btn-PM" onclick="showPM()">PM</button>
+		</div>
 
         <div class="content-section" id="content-area">
             <h2 class="content-title" id="content-title">Bienvenue</h2>
@@ -520,6 +514,4 @@ function copyToClipboardSimple(text, element) {
 }
     </script>
 </body>
-
 </html>
-
