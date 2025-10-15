@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="02.png">
+    <title>PRODUCTION</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-structure {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+        }
+
+        .btn-structure:hover {
+            background: linear-gradient(to right, #27ae60, #229954);
+        }
+
+        .btn-habillage {
+            background: linear-gradient(to right, #3498db, #2980b9);
+        }
+
+        .btn-habillage:hover {
+            background: linear-gradient(to right, #2980b9, #2573a7);
+        }
+		
+		.btn-accueil {
+            background: linear-gradient(to right, #0DDE5A, #2980b9);
+        }
+
+        .btn-accueil:hover {
+            background: linear-gradient(to right, #999420, #BC24ED);
+        }
+
+        .btn-PM {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+        }
+
+        .btn-PM:hover {
+            background: linear-gradient(to right, #8e44ad, #7d3c98);
+        }
+
+		.btn-lien {
+			background: linear-gradient(to right, #f1c40f, #f39c12);
+		}
+
+		.btn-lien:hover {
+			background: linear-gradient(to right, #d35400, #ba4a00);
+		}
+
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            text-align: center;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #34495e;
+        }
+
+        .content-text h3 {
+            color: #3498db;
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .content-text h4 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .content-text ul, .content-text ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content-text li {
+            margin-bottom: 10px;
+        }
+
+        .content-text p {
+            margin-bottom: 15px;
+        }
+
+        .content-text strong {
+            color: #2c3e50;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #3498db, transparent);
+            margin: 30px 0;
+            border: none;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Styles pour les écrans plus petits */
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Etapes de production</h1>
+
+        <div class="button-container">
+			<a href="file:///E:/M0280/Web/Paris_17_habitat/Consigne/accueil.html" class="btn btn-accueil" style="text-decoration: none; display: inline-block;">
+				ACCUEIL
+			</a>
+			<button class="btn btn-lien" onclick="showlien ()">LIEN</button>
+			<button class="btn btn-structure" onclick="showStructure()">STRUCTURE</button>
+            <button class="btn btn-habillage" onclick="showHabillage()">HABILLAGE</button>
+            <button class="btn btn-PM" onclick="showPM()">PM</button>
+
+        </div>
+
+        <div class="content-section" id="content-area">
+            <h2 class="content-title" id="content-title">Bienvenue</h2>
+            <div class="content-text" id="content-text">
+                <p>Cliquez sur l'un des boutons ci-dessus pour afficher le contenu correspondant.</p>
+                <p>Ce site présente les consignes de structure, d'habillage ainsi que les RC (retours client) pour la production avec le nouveau processus.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Paris Habita / Habitat 17</p>
+        </div>
+    </div>
+
+    <script>
+        function showStructure() {
+            document.getElementById('content-title').textContent = 'STRUCTURE';
+            document.getElementById('content-text').innerHTML = `
+				<h3><i>NB: </i>Bien vérifier les plans à utiliser pour ne pas refaire la liasion des étages, niveaux, zones et équipements</h3>
+
+                <p>Notre processus de production reste inchangé à l'exception des points suivant :</p>
+                <ul>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span><strong>Toujours lier</strong> tous les <strong>étages</strong> au <strong>plugin</strong> revit</span>
+						</div>
+					</div>
+
+						<img src="image1.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+                    <div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span>Contours façade:</strong> à tracer dans <strong>Plan de surface</strong>, dans <strong>StonalContours</strong></span>
+						</div>
+					</div>
+
+						<img src="image2.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 450px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;">
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⚠️</span>
+							<span><strong>Contours façade:</strong> ne plus lier les contours avec <strong>le 2cm</strong>, faire plusieurs contours façade si nécessaire. Mettre la surface dans un seul contour.</span>
+						</div>
+					</div>
+
+						<img src="image3.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+                    <div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span><strong>Contours façade:</strong> chaque étage doit avoir au moins un contour façade selon le cas du bâtiment, y compris les <strong>combles </strong>et les <strong>toitures en pente ou terrasse.</strong></span>
+						</div>
+					</div>
+
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span>Le reste est identique à notre production précédente</span>
+						</div>
+					</div>
+
+                </ul>
+
+            `;
+        }
+
+        function showHabillage() {
+            document.getElementById('content-title').textContent = 'HABILLAGE';
+            document.getElementById('content-text').innerHTML = `
+                <p>Notre processus de production reste inchangé à l'exception des points suivant :</p>
+                <ul>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span><strong>Pièces</strong> reseigner uniquement l'attribut de pièce <strong> Stonal_Nom&code</strong></span>
+						</div>
+					</div>
+
+						<img src="image4.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span><strong>Zones: </strong>à affecter avec le plugin et les paramètres suivant se remplira automatiquement: </span>
+						</div>
+					</div>
+
+						<ul>
+							<li>Identifiant lot </li>
+							<li>Identifiant zone</li>
+							<li>NomLot</li>
+							<li>NomZone</li>
+						</ul>
+						<li><strong><i>NB: </i></strong>Lorsque les zones dans FP online ne correspondent pas au plugin, remonter au CP</li>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span>Pour vérifier les affectations effectuer avec le plugin, les nombres de pièces comportons les zones et les lots doivent être unique, sauf pour les existants dans tous les étages exemple :  Partie commune.</span>
+						</div>
+					</div>
+
+						<img src="image5.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span><strong>Equipement: </strong> Les équipements sont à poser avec le plugin, on pose seulement une par catégorie et on peut effectuer les copier, les IFC ne sont pas à se préoccuper, les attributs sont déjà renseignés en utilisant le plugin, par contre s’il y des dossiers comportent <strong>des attributs on a l’obligation de les poser manuellement.</strong></span>
+						</div>
+					</div>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span>Remplir les Informations du projet</span>
+						</div>
+					</div>
+
+						<img src="image6.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span>Le traçade des éléments en courbe est autorisé</span>
+						</div>
+					</div>
+
+					<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+						<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+							<span style="font-size: 20px;">⭐</span>
+							<span>Le reste est identique à notre production précédente</span>
+						</div>
+					</div>
+
+            `;
+        }
+
+        function showPM() {
+            document.getElementById('content-title').textContent = 'RC - Règles de Conception';
+            document.getElementById('content-text').innerHTML = `
+                <h3>3.3 PLAN DE MASSE OU ESPACE EXTERIEUR </h3>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>DIGIT SUR GSTAR CAD : (CONTOUR SITE, TRACAGE DES AIRES)</span>
+					</div>
+				</div>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>IMPORTER FOND SUR REVIT</span>
+					</div>
+				</div>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>-	TRACAGE DU CONTOUR SITE DANS LE STONALS CONTOURS ET METTRE SURFACE ET NOMME " CONTOUR SITE " : </span>
+					</div>
+				</div>
+					<img src="image7.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>PLAN DE NIVEAU : METTRE LES SEPARATEUR DES PIECES POUR LES AIRES (AMMENAGEMENT, BATIMENTS, ESPACES VERT) </span>
+					</div>
+				</div>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>PLACER LES PIECES ET RENNOMER EN FONCTION DES AIRES APPROPRIER </span>
+					</div>
+				</div>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>AFFECTATION DES AIRES VIA LE PLUGIN </span>
+					</div>
+				</div>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>METTRE LES EMPRUNTE DES BATIMENTS : </span>
+					</div>
+				</div>
+					<img src="image8.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>POSER LES EQUIPEMENTS</span>
+					</div>
+				</div>
+					<img src="image9.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+				<div style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border: 2px solid #ffc107; border-radius: 12px; padding: 16px; margin: 15px 0; box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);">
+					<div style="display: flex; align-items: center; gap: 10px; font-weight: bold; color: #856404;">
+						<span style="font-size: 20px;">⭐</span>
+						<span>VERIFICATION DES POINTS BLOQUANTS A L’IMPORTATION : NE DOIVENT PAS CONTENIR DES POINTS BLOQUANT EN COULEUR ROUGE.</span>
+					</div>
+				</div>
+					<img src="image10.png" alt="Structure 1"
+							 onclick="this.style.transform = this.getAttribute('data-agrandi') === 'true' ? 'scale(1)' : 'scale(2)'; this.setAttribute('data-agrandi', this.getAttribute('data-agrandi') === 'true' ? 'false' : 'true');"
+							 data-agrandi="false"
+							 style="max-width: 600px; width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;"></li>
+
+
+            `;
+        }
+
+		function showlien() {
+    document.getElementById('content-title').textContent = 'LIEN';
+    document.getElementById('content-text').innerHTML = `
+        <h3>ACCES AUX PLATEFORMES EN LIGNE</h3>
+        <p>Liens FP du projet:</p>
+        <ul>
+            <li>PARIS HABITAT: <a href="https://platform.stonal.io/fr-FR/organization/PARIS_HABITAT/welcome" target="_blank" style="color: #3498db; text-decoration: none;">https://platform.stonal.io/fr-FR/organization/PARIS_HABITAT/welcome</a></li>
+            <li>HABITA 17: <a href="https://platform.stonal.io/fr-FR/organization/H17/welcome" target="_blank" style="color: #3498db; text-decoration: none;">https://platform.stonal.io/fr-FR/organization/H17/welcome</a></li>
+        </ul>
+        <p>Informations de connexion (survolez pour copier) :</p>
+        <ul>
+            <li><strong>Email</strong> : <span class="copyable" data-text="sambatra@futurmap.com" style="cursor: pointer; padding: 2px 5px; border-radius: 3px; transition: all 0.3s; border: 1px dashed transparent;">sambatra@futurmap.com</span></li>
+            <li><strong>Mot de passe</strong> : <span class="copyable" data-text="123456789SA++" style="cursor: pointer; padding: 2px 5px; border-radius: 3px; transition: all 0.3s; border: 1px dashed transparent;">123456789SA++</span></li>
+        </ul>
+    `;
+
+    // Ajouter les événements de copie
+    setTimeout(() => {
+        const copyableElements = document.querySelectorAll('.copyable');
+        copyableElements.forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#ecf0f1';
+                this.style.borderColor = '#3498db';
+                this.title = 'Cliquez pour copier';
+            });
+
+            element.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+                this.style.borderColor = 'transparent';
+            });
+
+            element.addEventListener('click', function() {
+                const textToCopy = this.getAttribute('data-text');
+                copyToClipboardSimple(textToCopy, this);
+            });
+        });
+    }, 100);
+}
+
+function copyToClipboardSimple(text, element) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Feedback visuel temporaire
+        const originalBg = element.style.backgroundColor;
+        const originalColor = element.style.color;
+        element.style.backgroundColor = '#2ecc71';
+        element.style.color = 'white';
+        element.textContent = '✓ Copié !';
+
+        setTimeout(() => {
+            element.style.backgroundColor = originalBg;
+            element.style.color = originalColor;
+            element.textContent = text;
+        }, 1000);
+    });
+}
+    </script>
+</body>
+</html>
